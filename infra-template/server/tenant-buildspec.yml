@@ -39,4 +39,4 @@ artifacts:
   discard-paths: yes
   files:
     # List of local artifacts that will be passed down the pipeline
-    - server/packaged.yaml
+    - infra-template/server/packaged.yaml
