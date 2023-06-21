@@ -960,6 +960,9 @@ Resources:
   #Create API Keys and Usage Plans
   APIGatewayApiKeySystemAdmin:
     Type: AWS::ApiGateway::ApiKey
+    DependsOn:
+    - AdminApiGatewayApi
+    - prod
     Properties:
       Description: "This is the api key to be used by system admin"
       Enabled: True
@@ -967,6 +970,9 @@ Resources:
       Value: !Ref ApiKeyOperationUsersParameter
   APIGatewayApiKeyPlatinumTier:
     Type: AWS::ApiGateway::ApiKey
+    DependsOn:
+      - AdminApiGatewayApi
+      - prod
     Properties: 
       Description: 'This is the api key to be used by platinum tier tenants'
       Enabled: True
@@ -974,6 +980,9 @@ Resources:
       Value: !Ref ApiKeyPlatinumTierParameter
   APIGatewayApiKeyPremiumTier:
     Type: AWS::ApiGateway::ApiKey
+    DependsOn:
+      - AdminApiGatewayApi
+      - prod
     Properties: 
       Description: 'This is the api key to be used by premium tier tenants'
       Enabled: True
@@ -981,6 +990,9 @@ Resources:
       Value: !Ref ApiKeyPremiumTierParameter
   APIGatewayApiKeyStandardTier:
     Type: AWS::ApiGateway::ApiKey
+    DependsOn:
+      - AdminApiGatewayApi
+      - prod
     Properties: 
       Description: 'This is the api key to be used by standard tier tenants'
       Enabled: True
@@ -988,6 +1000,9 @@ Resources:
       Value: !Ref ApiKeyStandardTierParameter
   APIGatewayApiKeyBasicTier:
     Type: AWS::ApiGateway::ApiKey
+    DependsOn:
+      - AdminApiGatewayApi
+      - prod
     Properties: 
       Description: 'This is the api key to be used by basic tier tenants'
       Enabled: True
