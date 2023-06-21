@@ -961,8 +961,7 @@ Resources:
   APIGatewayApiKeySystemAdmin:
     Type: AWS::ApiGateway::ApiKey
     DependsOn:
-    - AdminApiGatewayApi
-    - prod
+      - AdminApiGatewayApiprodStage
     Properties:
       Description: "This is the api key to be used by system admin"
       Enabled: True
