@@ -971,8 +971,7 @@ Resources:
   APIGatewayApiKeyPlatinumTier:
     Type: AWS::ApiGateway::ApiKey
     DependsOn:
-      - AdminApiGatewayApi
-      - prod
+      - AdminApiGatewayApiprodStage
     Properties: 
       Description: 'This is the api key to be used by platinum tier tenants'
       Enabled: True
@@ -981,8 +980,7 @@ Resources:
   APIGatewayApiKeyPremiumTier:
     Type: AWS::ApiGateway::ApiKey
     DependsOn:
-      - AdminApiGatewayApi
-      - prod
+      - AdminApiGatewayApiprodStage
     Properties: 
       Description: 'This is the api key to be used by premium tier tenants'
       Enabled: True
@@ -991,8 +989,7 @@ Resources:
   APIGatewayApiKeyStandardTier:
     Type: AWS::ApiGateway::ApiKey
     DependsOn:
-      - AdminApiGatewayApi
-      - prod
+      - AdminApiGatewayApiprodStage
     Properties: 
       Description: 'This is the api key to be used by standard tier tenants'
       Enabled: True
@@ -1001,8 +998,7 @@ Resources:
   APIGatewayApiKeyBasicTier:
     Type: AWS::ApiGateway::ApiKey
     DependsOn:
-      - AdminApiGatewayApi
-      - prod
+      - AdminApiGatewayApiprodStage
     Properties: 
       Description: 'This is the api key to be used by basic tier tenants'
       Enabled: True
