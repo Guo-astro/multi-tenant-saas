@@ -958,7 +958,7 @@ Resources:
       StageName: prod
   
   #Create API Keys and Usage Plans
-  APIGatewayApiKeySystemAdmin:
+  APIGatewayApiKeySystemAdminProd:
     Type: AWS::ApiGateway::ApiKey
     DependsOn:
       - AdminApiGatewayApiprodStage
@@ -967,7 +967,7 @@ Resources:
       Enabled: True
       Name: Serverless-SaaS-SysAdmin-ApiKey
       Value: !Ref ApiKeyOperationUsersParameter
-  APIGatewayApiKeyPlatinumTier:
+  APIGatewayApiKeyPlatinumTierProd:
     Type: AWS::ApiGateway::ApiKey
     DependsOn:
       - AdminApiGatewayApiprodStage
@@ -976,7 +976,7 @@ Resources:
       Enabled: True
       Name: Serverless-SaaS-PlatinumTier-ApiKey
       Value: !Ref ApiKeyPlatinumTierParameter
-  APIGatewayApiKeyPremiumTier:
+  APIGatewayApiKeyPremiumTierProd:
     Type: AWS::ApiGateway::ApiKey
     DependsOn:
       - AdminApiGatewayApiprodStage
@@ -985,7 +985,7 @@ Resources:
       Enabled: True
       Name: Serverless-SaaS-PremiumTier-ApiKey
       Value: !Ref ApiKeyPremiumTierParameter
-  APIGatewayApiKeyStandardTier:
+  APIGatewayApiKeyStandardTierProd:
     Type: AWS::ApiGateway::ApiKey
     DependsOn:
       - AdminApiGatewayApiprodStage
@@ -994,7 +994,7 @@ Resources:
       Enabled: True
       Name: Serverless-SaaS-StandardTier-ApiKey
       Value: !Ref ApiKeyStandardTierParameter
-  APIGatewayApiKeyBasicTier:
+  APIGatewayApiKeyBasicTierProd:
     Type: AWS::ApiGateway::ApiKey
     DependsOn:
       - AdminApiGatewayApiprodStage
@@ -1088,35 +1088,35 @@ Resources:
   AssociateAPIKeyToUsagePlan:
     Type: AWS::ApiGateway::UsagePlanKey
     Properties:
-      KeyId: !Ref APIGatewayApiKeySystemAdmin
+      KeyId: !Ref APIGatewayApiKeySystemAdminProd
       KeyType: API_KEY
       UsagePlanId: !Ref UsagePlanSystemAdmin
     DependsOn: UsagePlanSystemAdmin
   AssociatePlatinumAPIKeyToUsagePlan:
     Type: AWS::ApiGateway::UsagePlanKey
     Properties: 
-      KeyId: !Ref APIGatewayApiKeyPlatinumTier
+      KeyId: !Ref APIGatewayApiKeyPlatinumTierProd
       KeyType: API_KEY
       UsagePlanId: !Ref UsagePlanPlatinumTier
     DependsOn: UsagePlanPlatinumTier
   AssociatePremiumAPIKeyToUsagePlan:
     Type: AWS::ApiGateway::UsagePlanKey
     Properties: 
-      KeyId: !Ref APIGatewayApiKeyPremiumTier
+      KeyId: !Ref APIGatewayApiKeyPremiumTierProd
       KeyType: API_KEY
       UsagePlanId: !Ref UsagePlanPremiumTier
     DependsOn: UsagePlanPremiumTier
   AssociateStandardAPIKeyToUsagePlan:
     Type: AWS::ApiGateway::UsagePlanKey
     Properties: 
-      KeyId: !Ref APIGatewayApiKeyStandardTier
+      KeyId: !Ref APIGatewayApiKeyStandardTierProd
       KeyType: API_KEY
       UsagePlanId: !Ref UsagePlanStandardTier
     DependsOn: UsagePlanStandardTier
   AssociateBasicAPIKeyToUsagePlan:
     Type: AWS::ApiGateway::UsagePlanKey
     Properties: 
-      KeyId: !Ref APIGatewayApiKeyBasicTier
+      KeyId: !Ref APIGatewayApiKeyBasicTierProd
       KeyType: API_KEY
       UsagePlanId: !Ref UsagePlanBasicTier
     DependsOn: UsagePlanBasicTier
