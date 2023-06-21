@@ -965,7 +965,7 @@ Resources:
     Properties:
       Description: "This is the api key to be used by system admin"
       Enabled: True
-      Name: Serverless-SaaS-SysAdmin-ApiKey
+      Name: Serverless-SaaS-SysAdmin-ApiKey-Prod
       Value: !Ref ApiKeyOperationUsersParameter
   APIGatewayApiKeyPlatinumTierProd:
     Type: AWS::ApiGateway::ApiKey
@@ -974,7 +974,7 @@ Resources:
     Properties: 
       Description: 'This is the api key to be used by platinum tier tenants'
       Enabled: True
-      Name: Serverless-SaaS-PlatinumTier-ApiKey
+      Name: Serverless-SaaS-PlatinumTier-ApiKey-Prod
       Value: !Ref ApiKeyPlatinumTierParameter
   APIGatewayApiKeyPremiumTierProd:
     Type: AWS::ApiGateway::ApiKey
@@ -983,7 +983,7 @@ Resources:
     Properties: 
       Description: 'This is the api key to be used by premium tier tenants'
       Enabled: True
-      Name: Serverless-SaaS-PremiumTier-ApiKey
+      Name: Serverless-SaaS-PremiumTier-ApiKey-Prod
       Value: !Ref ApiKeyPremiumTierParameter
   APIGatewayApiKeyStandardTierProd:
     Type: AWS::ApiGateway::ApiKey
@@ -992,7 +992,7 @@ Resources:
     Properties: 
       Description: 'This is the api key to be used by standard tier tenants'
       Enabled: True
-      Name: Serverless-SaaS-StandardTier-ApiKey
+      Name: Serverless-SaaS-StandardTier-ApiKey-Prod
       Value: !Ref ApiKeyStandardTierParameter
   APIGatewayApiKeyBasicTierProd:
     Type: AWS::ApiGateway::ApiKey
@@ -1001,7 +1001,7 @@ Resources:
     Properties: 
       Description: 'This is the api key to be used by basic tier tenants'
       Enabled: True
-      Name: Serverless-SaaS-BasicTier-ApiKey
+      Name: Serverless-SaaS-BasicTier-ApiKey-Prod
       Value: !Ref ApiKeyBasicTierParameter
 
   UsagePlanPlatinumTier:   
