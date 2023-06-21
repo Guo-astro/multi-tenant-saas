@@ -3,6 +3,8 @@
 
 # Notes
 - Whenever the code changed under TenantPipeline, just run ./deployment.sh email. The tenant-buildspec.yaml is used in CDK  (serverless-saas-stack.ts) to define the codebuild stage.
+- The codebuild phase will create tenant specified resources/services.
+- lambda-deploy-tenant-stack.py is used in the deploy stage of codepipeline that is going to check the tenant dynamodb table for cfn state.
 
 # License
 The documentation is made available under the Creative Commons Attribution-ShareAlike 4.0 International License. See the LICENSE file.
