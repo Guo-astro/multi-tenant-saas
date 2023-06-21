@@ -957,40 +957,40 @@ Resources:
       StageName: prod
   
  #Create API Keys and Usage Plans
-  APIGatewayApiKeySystemAdmin:
+  APIGatewayApiKeySystemAdminProd:
     Type: AWS::ApiGateway::ApiKey
     Properties:
       Description: "This is the api key to be used by system admin"
       Enabled: True
-      Name: Serverless-SaaS-SysAdmin-ApiKey
+      Name: Serverless-SaaS-SysAdmin-ApiKey-Prod
       Value: !Ref ApiKeyOperationUsersParameter
-  APIGatewayApiKeyPlatinumTier:
+  APIGatewayApiKeyPlatinumTierProd:
     Type: AWS::ApiGateway::ApiKey
     Properties: 
       Description: 'This is the api key to be used by platinum tier tenants'
       Enabled: True
-      Name: Serverless-SaaS-PlatinumTier-ApiKey
+      Name: Serverless-SaaS-PlatinumTier-ApiKey-Prod
       Value: !Ref ApiKeyPlatinumTierParameter
-  APIGatewayApiKeyPremiumTier:
+  APIGatewayApiKeyPremiumTierProd:
     Type: AWS::ApiGateway::ApiKey
     Properties: 
       Description: 'This is the api key to be used by premium tier tenants'
       Enabled: True
-      Name: Serverless-SaaS-PremiumTier-ApiKey
+      Name: Serverless-SaaS-PremiumTier-ApiKey-Prod
       Value: !Ref ApiKeyPremiumTierParameter
-  APIGatewayApiKeyStandardTier:
+  APIGatewayApiKeyStandardTierProd:
     Type: AWS::ApiGateway::ApiKey
     Properties: 
       Description: 'This is the api key to be used by standard tier tenants'
       Enabled: True
-      Name: Serverless-SaaS-StandardTier-ApiKey
+      Name: Serverless-SaaS-StandardTier-ApiKey-Prod
       Value: !Ref ApiKeyStandardTierParameter
-  APIGatewayApiKeyBasicTier:
+  APIGatewayApiKeyBasicTierProd:
     Type: AWS::ApiGateway::ApiKey
     Properties: 
       Description: 'This is the api key to be used by basic tier tenants'
       Enabled: True
-      Name: Serverless-SaaS-BasicTier-ApiKey
+      Name: Serverless-SaaS-BasicTier-ApiKey-Prod
       Value: !Ref ApiKeyBasicTierParameter
 
   UsagePlanPlatinumTier:   
@@ -1077,35 +1077,35 @@ Resources:
   AssociateAPIKeyToUsagePlan:
     Type: AWS::ApiGateway::UsagePlanKey
     Properties:
-      KeyId: !Ref APIGatewayApiKeySystemAdmin
+      KeyId: !Ref APIGatewayApiKeySystemAdminProd
       KeyType: API_KEY
       UsagePlanId: !Ref UsagePlanSystemAdmin
     DependsOn: UsagePlanSystemAdmin
   AssociatePlatinumAPIKeyToUsagePlan:
     Type: AWS::ApiGateway::UsagePlanKey
     Properties: 
-      KeyId: !Ref APIGatewayApiKeyPlatinumTier
+      KeyId: !Ref APIGatewayApiKeyPlatinumTierProd
       KeyType: API_KEY
       UsagePlanId: !Ref UsagePlanPlatinumTier
     DependsOn: UsagePlanPlatinumTier
   AssociatePremiumAPIKeyToUsagePlan:
     Type: AWS::ApiGateway::UsagePlanKey
     Properties: 
-      KeyId: !Ref APIGatewayApiKeyPremiumTier
+      KeyId: !Ref APIGatewayApiKeyPremiumTierProd
       KeyType: API_KEY
       UsagePlanId: !Ref UsagePlanPremiumTier
     DependsOn: UsagePlanPremiumTier
   AssociateStandardAPIKeyToUsagePlan:
     Type: AWS::ApiGateway::UsagePlanKey
     Properties: 
-      KeyId: !Ref APIGatewayApiKeyStandardTier
+      KeyId: !Ref APIGatewayApiKeyStandardTierProd
       KeyType: API_KEY
       UsagePlanId: !Ref UsagePlanStandardTier
     DependsOn: UsagePlanStandardTier
   AssociateBasicAPIKeyToUsagePlan:
     Type: AWS::ApiGateway::UsagePlanKey
     Properties: 
-      KeyId: !Ref APIGatewayApiKeyBasicTier
+      KeyId: !Ref APIGatewayApiKeyBasicTierProd
       KeyType: API_KEY
       UsagePlanId: !Ref UsagePlanBasicTier
     DependsOn: UsagePlanBasicTier
